@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- Ensures power scaling and accessbility on all devices -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Accessible HTML Form</title>
+
+    <!-- Internal CSS -->
+    <style>
+        body {
+            background-color: #f0f8ff;
+            font-family: Arial, Helvetica, sans-serif;
+            margin: 0;
+            padding: 20px;
+        }
+        
+        main {
+            max-width: 600px;
+            margin: auto;
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+        }
+        
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        
+        fieldset{
+            border: 1px solid #ccc;
+            padding: 15px;
+            margin-bottom: 15px;
+            border-radius: 5px;
+        }
+        
+        legend {
+            font-weight: bold;
+            margin-top: 10px;
+            font-weight: bold;
+        }
+
+        input,
+        select,
+        textarea {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+        }
+
+        input[type="radio"],
+        input[type="checkbox"] {
+            width: auto;
+        }
+
+        button {
+            background-color: #007acc;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        button:hover {
+            background-color: #005f99;
+        }
+    </style> 
+</head>   
+
+<body>
+    <!--Main content area for semanatic structure -->
+    <main>
+        <h1>User Registration Form</h1>
+        <p>Please complete the form below. All required fields are marked.</p>
+         <!-- 
+            The form element groups all user inputs.
+            action="#" is used since no server-side processing is required for this lab.
+        -->
+        <form action="#" method="post">
+            <!--Fieldset groups related form controls semantically -->
+            <fieldset>
+                <legend>Personal Information</legend>
+
+                <!--Text input with required validation -->
+                <label for="fullname">Full Name:</label>
+                <input
+                    type="text"
+                    id="fullname"
+                    name="fullname"
+                    required
+                    placeholder="Enter your full name">
+                <br><br>
+                <!-- Email Section Added -->
+                <label for="email">Email Address:</label>
+                <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    required
+                    placeholder="Enter your email address">
+                <br><br>    
+                <!-- Passwort input hides user input for security -->
+                <label for="password">Password:</label>
+                <input
+                    type="password"
+                    id="password"
+                    name="password"
+                    required
+                    minlength="8">
+                    <br><br>
+                <!-- Date input provides a calender picker -->
+                 <label for="dob">Date of Birth:</label>
+                <input
+                    type="date"
+                    id="dob"
+                    name="dob"
+                    required>
+                    <br><br>
+                    </fieldset>
+
+            <br> 
+             <!--Radio buttons grouped using fieldset -->
+            <fieldset>
+                <legend>Gender</legend>
+
+                <!--Radio buttons allow only one selection -->
+                <input type="radio" id="female" name="gender" value="female" required>
+                <label for="female">Female</label>
+
+                <input type="radio" id="male" name="gender" value="male">
+                <label for="male">Male</label>
+
+                 <input type="radio" id="other" name="gender" value="other">
+                <label for="other">Other</label>
+                </fieldset>
+
+            <br>    
+
+            <!-- Checkbox section for multiple selections -->
+            <fieldset>
+                <legend>Interests</legend>
+
+                <!-- Checkboxes allow multiple selections -->
+                <input type="checkbox" id="html" name="interests" value="html" required>
+                <label for="html">HTML</label>
+
+                <input type="checkbox" id="css" name="interests" value="css" required>
+                <label for="css">CSS</label>
+
+                <input type="checkbox" id="javaScript" name="interests" value="javascript" required>
+                <label for="javaScript">JavaScript</label>
+            </fieldset>
+
+            <br>
+
+            <!--Dropdown menu using select element -->
+            <fieldset>
+                <legend>Education Level</legend>
+
+                <label for="education">Highest Education Completed:</label>
+                <select id="education" name="education" required>
+                  <option value="">-- Please choose an option --</option>
+                  <option value="highschool">High School</option>
+                  <option value="College">College</option>
+                  <option value="university">University</option>
+                  </select>
+            </fieldset>
+            <br>
+
+            <!-- Textarea for longer user input -->
+            <fieldset>
+                <legend>Additional Information</legend>
+
+                <label for="comments">Comments:</label>
+                <textarea
+                     id="comments"
+                     name="comments"
+                     rows="4"
+                     cols="40"
+                     placeholder="Enter any additional information here"></textarea>
+            </fieldset>
+
+            <br>
+            <!-- Submit button-->
+             <button type="submit">Submit Form</button>
+
+        </form>
+    </main>
+</body>
+</html>
