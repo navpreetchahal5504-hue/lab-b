@@ -2,12 +2,14 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <!-- Ensures power scaling and accessbility on all devices -->
+    <!-- Ensures power scaling and accessibility on all devices -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title> Accessible HTML Form</title>
 
     <!-- Internal CSS -->
     <style>
+        /* Element selector:
+            Styles the overall page background and sets the default font */
         body {
             background-color: #f0f8ff;
             font-family: Arial, Helvetica, sans-serif;
@@ -15,6 +17,8 @@
             padding: 20px;
         }
         
+        /* Element selector:
+            Centres the main content and adds padding and background for readability */
         main {
             max-width: 600px;
             margin: auto;
@@ -23,11 +27,15 @@
             border-radius: 8px;
         }
         
+        /* Element selector:
+            Changes the colour and alignment of the heading */
         h1 {
             text-align: center;
             color: #333;
         }
         
+        /* Element selector:
+            Adds a border, spacing, and rounded corners group related form controls */
         fieldset{
             border: 1px solid #ccc;
             padding: 15px;
@@ -35,12 +43,17 @@
             border-radius: 5px;
         }
         
+        /* Element selector:
+            Styles the legend text to make section titles stand out */
         legend {
             font-weight: bold;
             margin-top: 10px;
-            font-weight: bold;
         }
 
+        /* Grouped selector:
+            Applies consistent width, padding, margin, and border styling
+            to text inputs, dropdowns, and text areas */
+            
         input,
         select,
         textarea {
@@ -50,11 +63,15 @@
             border: 1px solid #ccc;
         }
 
+        /* Attribute selector::
+            Overrides width so radio buttons and checkboxes display correctly */
         input[type="radio"],
         input[type="checkbox"] {
             width: auto;
         }
 
+        /* Element selector:
+             Styles the submit button with color, padding, and rounded corners */
         button {
             background-color: #007acc;
             color: white;
@@ -65,10 +82,12 @@
             width: 100%;
         }
 
+        /* Pseudo-class selector:
+           Changes the button colour when the user hovers over it */
         button:hover {
             background-color: #005f99;
         }
-    </style> 
+</style> 
 </head>   
 
 <body>
@@ -112,7 +131,7 @@
                     required
                     minlength="8">
                     <br><br>
-                <!-- Date input provides a calender picker -->
+                <!-- Date input provides a calendar picker -->
                  <label for="dob">Date of Birth:</label>
                 <input
                     type="date"
@@ -148,10 +167,10 @@
                 <input type="checkbox" id="html" name="interests" value="html" required>
                 <label for="html">HTML</label>
 
-                <input type="checkbox" id="css" name="interests" value="css" required>
+                <input type="checkbox" id="css" name="interests" value="css">
                 <label for="css">CSS</label>
 
-                <input type="checkbox" id="javaScript" name="interests" value="javascript" required>
+                <input type="checkbox" id="javaScript" name="interests" value="javascript">
                 <label for="javaScript">JavaScript</label>
             </fieldset>
 
